@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct ContentView: View {
+    let healthStore = HKHealthStore()
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -17,7 +19,24 @@ struct ContentView: View {
         }
         .padding()
     }
+    
+    func setupHealthKit() {
+        if HKHealthStore.isHealthDataAvailable() {
+            
+        } else {
+            
+        }
+        let distanceType = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
+        healthStore.requestAuthorization(toShare: [distanceType], read: nil) { success, error in
+            if success {
+                
+            } else {
+                
+            }
+        }
+    }
 }
+
 
 #Preview {
     ContentView()
