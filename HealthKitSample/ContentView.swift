@@ -8,31 +8,20 @@
 import SwiftUI
 import HealthKit
 
+
 struct ContentView: View {
-    let healthStore = HKHealthStore()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-    
-    func setupHealthKit() {
-        if HKHealthStore.isHealthDataAvailable() {
-            
-        } else {
-            
-        }
-        let distanceType = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
-        healthStore.requestAuthorization(toShare: [distanceType], read: nil) { success, error in
-            if success {
-                
-            } else {
+        NavigationView {
+            List {
+                NavigationLink(destination: StepCountReadView()) {
+                    Text("歩数を呼び出す")
+                }
+                NavigationLink(destination: StepCountSaveView()) {
+                    Text("歩数を保存する")
+                }
                 
             }
+            .navigationBarTitle("サンプルコード")
         }
     }
 }
