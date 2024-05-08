@@ -11,6 +11,10 @@
 		66789D9A2BE09DCF00C67FD3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66789D992BE09DCF00C67FD3 /* ContentView.swift */; };
 		66789D9C2BE09DD100C67FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66789D9B2BE09DD100C67FD3 /* Assets.xcassets */; };
 		66789D9F2BE09DD100C67FD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66789D9E2BE09DD100C67FD3 /* Preview Assets.xcassets */; };
+		66789DA72BEAD4BA00C67FD3 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66789DA62BEAD4BA00C67FD3 /* HealthData.swift */; };
+		66789DA92BEAD56B00C67FD3 /* HealthKitSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66789DA82BEAD56A00C67FD3 /* HealthKitSupport.swift */; };
+		66789DAB2BEADA3C00C67FD3 /* StepCountSaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66789DAA2BEADA3C00C67FD3 /* StepCountSaveView.swift */; };
+		66789DAD2BEADA4B00C67FD3 /* StepCountReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66789DAC2BEADA4B00C67FD3 /* StepCountReadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		66789D9B2BE09DD100C67FD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66789D9E2BE09DD100C67FD3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		66789DA52BE09E9100C67FD3 /* HealthKitSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitSample.entitlements; sourceTree = "<group>"; };
+		66789DA62BEAD4BA00C67FD3 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
+		66789DA82BEAD56A00C67FD3 /* HealthKitSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSupport.swift; sourceTree = "<group>"; };
+		66789DAA2BEADA3C00C67FD3 /* StepCountSaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountSaveView.swift; sourceTree = "<group>"; };
+		66789DAC2BEADA4B00C67FD3 /* StepCountReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountReadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,10 @@
 				66789DA52BE09E9100C67FD3 /* HealthKitSample.entitlements */,
 				66789D972BE09DCF00C67FD3 /* HealthKitSampleApp.swift */,
 				66789D992BE09DCF00C67FD3 /* ContentView.swift */,
+				66789DAA2BEADA3C00C67FD3 /* StepCountSaveView.swift */,
+				66789DAC2BEADA4B00C67FD3 /* StepCountReadView.swift */,
+				66789DA62BEAD4BA00C67FD3 /* HealthData.swift */,
+				66789DA82BEAD56A00C67FD3 /* HealthKitSupport.swift */,
 				66789D9B2BE09DD100C67FD3 /* Assets.xcassets */,
 				66789D9D2BE09DD100C67FD3 /* Preview Content */,
 			);
@@ -139,7 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66789DA92BEAD56B00C67FD3 /* HealthKitSupport.swift in Sources */,
+				66789DA72BEAD4BA00C67FD3 /* HealthData.swift in Sources */,
+				66789DAD2BEADA4B00C67FD3 /* StepCountReadView.swift in Sources */,
 				66789D9A2BE09DCF00C67FD3 /* ContentView.swift in Sources */,
+				66789DAB2BEADA3C00C67FD3 /* StepCountSaveView.swift in Sources */,
 				66789D982BE09DCF00C67FD3 /* HealthKitSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +294,9 @@
 				DEVELOPMENT_TEAM = DJ7VR35KC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "アプリ上で歩数データを用いるため、権限を許可する必要があります。";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "アプリ上で歩数データの更新を行うため、権限を許可する必要があります。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +327,9 @@
 				DEVELOPMENT_TEAM = DJ7VR35KC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "アプリ上で歩数データを用いるため、権限を許可する必要があります。";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "アプリ上で歩数データの更新を行うため、権限を許可する必要があります。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
