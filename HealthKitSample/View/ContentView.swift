@@ -13,13 +13,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: StepCountReadView()) {
-                    Text("歩数を呼び出す")
-                }
                 NavigationLink(destination: StepCountSaveView()) {
                     Text("歩数を保存する")
                 }
-                
+                NavigationLink(destination: StepCountReadView()) {
+                    Text("歩数を読み込む")
+                }
             }
             .navigationBarTitle("サンプルコード")
         }

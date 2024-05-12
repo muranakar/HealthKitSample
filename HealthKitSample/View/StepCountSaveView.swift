@@ -6,54 +6,66 @@
 //
 
 import SwiftUI
+import HealthKit
+
 
 struct StepCountSaveView: View {
     @StateObject var healthData = HealthData()
+    @State private var authenticated: Bool? = nil
+    @State private var trigger = false
     @State var isSuccessRequest: Bool? = nil
+    @State var inputStepCount: Int = 0
     
-    @State var list: [Double] = []
+    @State var list: [StepData] = []
     
     var body: some View {
-        VStack{
-            if isSuccessRequest == nil {
+        VStack(alignment: .center){
+            Spacer()
+            if authenticated == nil {
                 Text("認証を行っておりません")
             }
-            if isSuccessRequest == true {
+            if authenticated == true {
                 Text("認証に成功しました")
             }
-            if isSuccessRequest == false {
+            if authenticated == false {
                 Text("認証に失敗しました")
             }
             
-            Button("認証") {
-                HealthData.requestHealthDataAccessIfNeeded { success in
-                    if success {
-                        isSuccessRequest = true
-                    } else {
-                        isSuccessRequest = false
-                    }
-                }
-            }
-            Button("データを取得する") {
-                let now = Date()
-                let startDate = getLastWeekStartDate()
-                let endDate = now
-                let dateInterval = DateComponents(day: 1)
-                HealthData.fetchStatistics(with: .stepCount, options: .cumulativeSum, startDate: startDate, interval: dateInterval) { statisticsCollection in
-                    statisticsCollection.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
-                        let statisticsQuantity = getStatisticsQuantity(for: statistics, with: .cumulativeSum)
-                        if let value = statisticsQuantity?.doubleValue(for: .count()) {
-                            list.append(value)
-                        }
-                    }
-                    print(list)
-                }
-            }
+            TextField("",value: $inputStepCount, format: .number)
             
+            Button("歩数を保存する") {
+                guard let sample = processHealthSample(with: Double(inputStepCount)) else { return }
+                HealthData.saveHealthData([sample]) { success, error in
+                    if let error = error {
+                        print("エラー:", error.localizedDescription)
+                    }
+                    if success {
+                        print("新しいサンプルを正常に保存しました！", sample)
+                    } else {
+                        print("エラー: 新しいサンプルを保存できませんでした。", sample)
+                    }
+                }
+            }
+            Spacer()
+        }.healthDataAccessRequest(
+            store: HealthData.healthStore,
+            shareTypes: Set(HealthData.shareDataTypes),
+            readTypes: Set(HealthData.readDataTypes),
+            trigger: trigger,
+            completion: { result in
+                switch result {
+                case .success(_):
+                    authenticated = true
+                case .failure(let error):
+                    // Handle the error here.
+                    fatalError("*** An error occurred while requesting authentication: \(error) ***")
+                }
+            }
+        )
+        .onAppear{
+            trigger.toggle()
         }
     }
-        
-        
 }
 
 #Preview {
