@@ -24,6 +24,34 @@ func getSampleType(for identifier: String) -> HKSampleType? {
     return nil
 }
 
+func processHealthSample(with value: Double) -> HKObject? {
+    let dataTypeIdentifier = HKQuantityTypeIdentifier.stepCount.rawValue
+    
+    guard
+        let sampleType = getSampleType(for: dataTypeIdentifier),
+        let unit = preferredUnit(for: dataTypeIdentifier)
+    else {
+        return nil
+    }
+    
+    let now = Date()
+    let start = now
+    let end = now
+    
+    var optionalSample: HKObject?
+    if let quantityType = sampleType as? HKQuantityType {
+        let quantity = HKQuantity(unit: unit, doubleValue: value)
+        let quantitySample = HKQuantitySample(type: quantityType, quantity: quantity, start: start, end: end)
+        optionalSample = quantitySample
+    }
+    if let categoryType = sampleType as? HKCategoryType {
+        let categorySample = HKCategorySample(type: categoryType, value: Int(value), start: start, end: end)
+        optionalSample = categorySample
+    }
+    return optionalSample
+}
+
+
 // MARK: - Unit Support
 
 /// Return the appropriate unit to use with an HKSample based on the identifier. Asserts for compatible units.
@@ -126,4 +154,13 @@ func getStatisticsQuantity(for statistics: HKStatistics, with statisticsOptions:
     }
     
     return statisticsQuantity
+}
+
+extension Date {
+    static func mondayAt3AM() -> Date {
+        var dateComponent = Calendar(identifier: .iso8601).dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date())
+        dateComponent.hour = 3
+        let date = Calendar(identifier: .iso8601).date(from: dateComponent)!
+        return date
+    }
 }
