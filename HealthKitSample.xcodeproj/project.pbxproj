@@ -15,6 +15,7 @@
 		66789DA92BEAD56B00C67FD3 /* HealthKitSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66789DA82BEAD56A00C67FD3 /* HealthKitSupport.swift */; };
 		66789DAB2BEADA3C00C67FD3 /* StepCountSaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66789DAA2BEADA3C00C67FD3 /* StepCountSaveView.swift */; };
 		66789DAD2BEADA4B00C67FD3 /* StepCountReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66789DAC2BEADA4B00C67FD3 /* StepCountReadView.swift */; };
+		66A322BB2BF0F4E10033991B /* StepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A322BA2BF0F4E10033991B /* StepData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		66789DA82BEAD56A00C67FD3 /* HealthKitSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSupport.swift; sourceTree = "<group>"; };
 		66789DAA2BEADA3C00C67FD3 /* StepCountSaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountSaveView.swift; sourceTree = "<group>"; };
 		66789DAC2BEADA4B00C67FD3 /* StepCountReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountReadView.swift; sourceTree = "<group>"; };
+		66A322BA2BF0F4E10033991B /* StepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				66789DA52BE09E9100C67FD3 /* HealthKitSample.entitlements */,
 				66789D972BE09DCF00C67FD3 /* HealthKitSampleApp.swift */,
+				66A322B92BF0F4C50033991B /* Model */,
 				66789DAF2BEB793100C67FD3 /* View */,
 				66789DAE2BEB791400C67FD3 /* Utilities */,
 				66789D9B2BE09DD100C67FD3 /* Assets.xcassets */,
@@ -95,6 +98,14 @@
 				66789DAC2BEADA4B00C67FD3 /* StepCountReadView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		66A322B92BF0F4C50033991B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66A322BA2BF0F4E10033991B /* StepData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66789DA92BEAD56B00C67FD3 /* HealthKitSupport.swift in Sources */,
+				66A322BB2BF0F4E10033991B /* StepData.swift in Sources */,
 				66789DA72BEAD4BA00C67FD3 /* HealthData.swift in Sources */,
 				66789DAD2BEADA4B00C67FD3 /* StepCountReadView.swift in Sources */,
 				66789D9A2BE09DCF00C67FD3 /* ContentView.swift in Sources */,
