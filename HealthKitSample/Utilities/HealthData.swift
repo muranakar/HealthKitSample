@@ -45,7 +45,7 @@ class HealthData: ObservableObject {
         
         requestHealthDataAccessIfNeeded(toShare: shareDataTypes, read: readDataTypes, completion: completion)
     }
-
+    
     /// 必要に応じてHealthKitからヘルスケアデータをリクエストします。
     class func requestHealthDataAccessIfNeeded(toShare shareTypes: Set<HKSampleType>?,
                                                read readTypes: Set<HKObjectType>?,
@@ -104,8 +104,45 @@ class HealthData: ObservableObject {
                 completion(statsCollection)
             }
         }
-         
+        
         healthStore.execute(query)
+    }
+    // MARK: - １週間分の歩数
+    class func fetchWeeklySteps(completion: @escaping ([HKStatistics]?) -> Void) {
+        let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
+        
+        let now = Date()
+        let calendar = Calendar.current
+        
+        // 現在の日付の午前0時
+        let todayMidnight = calendar.startOfDay(for: now)
+        guard let todayAM3 = calendar.date(byAdding: .hour, value: 3, to: todayMidnight) else {
+            return
+        }
+        // 明日の午前0時
+        let endDate = calendar.date(byAdding: .day, value: 0, to: todayAM3)!
+        // 1週間前の日付の午前0時
+        let startDate = calendar.date(byAdding: .day, value: -6, to: todayAM3)!
+        
+        var interval = DateComponents()
+        interval.day = 1
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        
+        let query = HKStatisticsCollectionQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: startDate, intervalComponents: interval)
+        
+        query.initialResultsHandler = { _, results, error in
+            if let results = results {
+                var steps: [HKStatistics] = []
+                results.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
+                    steps.append(statistics)
+                }
+                completion(steps)
+            } else {
+                completion(nil)
+            }
+        }
+        HealthData.healthStore.execute(query)
     }
     
     // MARK: - Helper Functions
@@ -143,7 +180,7 @@ class HealthData: ObservableObject {
     /// Update the saved anchor used in a long-running anchored object query for a particular sample type.
     private class func setAnchor(_ queryAnchor: HKQueryAnchor?, for type: HKSampleType) {
         if let queryAnchor = queryAnchor,
-            let data = try? NSKeyedArchiver.archivedData(withRootObject: queryAnchor, requiringSecureCoding: true) {
+           let data = try? NSKeyedArchiver.archivedData(withRootObject: queryAnchor, requiringSecureCoding: true) {
             userDefaults.set(data, forKey: anchorKey(for: type))
         }
     }

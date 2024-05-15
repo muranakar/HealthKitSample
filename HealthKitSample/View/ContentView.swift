@@ -19,6 +19,10 @@ struct ContentView: View {
                 NavigationLink(destination: StepCountReadView()) {
                     Text("歩数を読み込む")
                 }
+                NavigationLink(destination:
+                    WeeklyStepsView()) {
+                    Text("１週間の歩数を取得する")
+                }
             }
             .navigationBarTitle("サンプルコード")
         }

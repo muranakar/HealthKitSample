@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66765B472BF3859F00EF882B /* WeeklyStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66765B462BF3859F00EF882B /* WeeklyStepsView.swift */; };
+		66765B4F2BF40A2400EF882B /* HealthKitSampleWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66765B4E2BF40A2400EF882B /* HealthKitSampleWatchApp.swift */; };
+		66765B512BF40A2400EF882B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66765B502BF40A2400EF882B /* ContentView.swift */; };
+		66765B532BF40A2500EF882B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66765B522BF40A2500EF882B /* Assets.xcassets */; };
+		66765B562BF40A2500EF882B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66765B552BF40A2500EF882B /* Preview Assets.xcassets */; };
+		66765B592BF40A2500EF882B /* HealthKitSampleWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 66765B4C2BF40A2400EF882B /* HealthKitSampleWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		66765B602BF43E5E00EF882B /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66765B5F2BF43E5E00EF882B /* HealthData.swift */; };
+		66765B642BF43ED200EF882B /* HealthKitSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66765B632BF43ED200EF882B /* HealthKitSupport.swift */; };
+		66765B662BF43F1400EF882B /* HeartrateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66765B652BF43F1400EF882B /* HeartrateView.swift */; };
 		66789D982BE09DCF00C67FD3 /* HealthKitSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66789D972BE09DCF00C67FD3 /* HealthKitSampleApp.swift */; };
 		66789D9A2BE09DCF00C67FD3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66789D992BE09DCF00C67FD3 /* ContentView.swift */; };
 		66789D9C2BE09DD100C67FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66789D9B2BE09DD100C67FD3 /* Assets.xcassets */; };
@@ -18,7 +27,41 @@
 		66A322BB2BF0F4E10033991B /* StepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A322BA2BF0F4E10033991B /* StepData.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		66765B572BF40A2500EF882B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66789D8C2BE09DCF00C67FD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66765B4B2BF40A2400EF882B;
+			remoteInfo = "HealthKitSampleWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66765B5D2BF40A2500EF882B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				66765B592BF40A2500EF882B /* HealthKitSampleWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		66765B462BF3859F00EF882B /* WeeklyStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStepsView.swift; sourceTree = "<group>"; };
+		66765B4C2BF40A2400EF882B /* HealthKitSampleWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HealthKitSampleWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66765B4E2BF40A2400EF882B /* HealthKitSampleWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSampleWatchApp.swift; sourceTree = "<group>"; };
+		66765B502BF40A2400EF882B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		66765B522BF40A2500EF882B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66765B552BF40A2500EF882B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		66765B5E2BF40F7300EF882B /* HealthKitSampleWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HealthKitSampleWatch Watch App.entitlements"; sourceTree = "<group>"; };
+		66765B5F2BF43E5E00EF882B /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
+		66765B632BF43ED200EF882B /* HealthKitSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSupport.swift; sourceTree = "<group>"; };
+		66765B652BF43F1400EF882B /* HeartrateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartrateView.swift; sourceTree = "<group>"; };
 		66789D942BE09DCF00C67FD3 /* HealthKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66789D972BE09DCF00C67FD3 /* HealthKitSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSampleApp.swift; sourceTree = "<group>"; };
 		66789D992BE09DCF00C67FD3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +76,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		66765B492BF40A2400EF882B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66789D912BE09DCF00C67FD3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,10 +93,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66765B4D2BF40A2400EF882B /* HealthKitSampleWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				66765B5E2BF40F7300EF882B /* HealthKitSampleWatch Watch App.entitlements */,
+				66765B4E2BF40A2400EF882B /* HealthKitSampleWatchApp.swift */,
+				66765B612BF43E9F00EF882B /* View */,
+				66765B622BF43EAF00EF882B /* Utilities */,
+				66765B522BF40A2500EF882B /* Assets.xcassets */,
+				66765B542BF40A2500EF882B /* Preview Content */,
+			);
+			path = "HealthKitSampleWatch Watch App";
+			sourceTree = "<group>";
+		};
+		66765B542BF40A2500EF882B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				66765B552BF40A2500EF882B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		66765B612BF43E9F00EF882B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66765B502BF40A2400EF882B /* ContentView.swift */,
+				66765B652BF43F1400EF882B /* HeartrateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66765B622BF43EAF00EF882B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				66765B5F2BF43E5E00EF882B /* HealthData.swift */,
+				66765B632BF43ED200EF882B /* HealthKitSupport.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		66789D8B2BE09DCF00C67FD3 = {
 			isa = PBXGroup;
 			children = (
 				66789D962BE09DCF00C67FD3 /* HealthKitSample */,
+				66765B4D2BF40A2400EF882B /* HealthKitSampleWatch Watch App */,
 				66789D952BE09DCF00C67FD3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				66789D942BE09DCF00C67FD3 /* HealthKitSample.app */,
+				66765B4C2BF40A2400EF882B /* HealthKitSampleWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +187,7 @@
 				66789D992BE09DCF00C67FD3 /* ContentView.swift */,
 				66789DAA2BEADA3C00C67FD3 /* StepCountSaveView.swift */,
 				66789DAC2BEADA4B00C67FD3 /* StepCountReadView.swift */,
+				66765B462BF3859F00EF882B /* WeeklyStepsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +203,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		66765B4B2BF40A2400EF882B /* HealthKitSampleWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66765B5A2BF40A2500EF882B /* Build configuration list for PBXNativeTarget "HealthKitSampleWatch Watch App" */;
+			buildPhases = (
+				66765B482BF40A2400EF882B /* Sources */,
+				66765B492BF40A2400EF882B /* Frameworks */,
+				66765B4A2BF40A2400EF882B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HealthKitSampleWatch Watch App";
+			productName = "HealthKitSampleWatch Watch App";
+			productReference = 66765B4C2BF40A2400EF882B /* HealthKitSampleWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		66789D932BE09DCF00C67FD3 /* HealthKitSample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66789DA22BE09DD100C67FD3 /* Build configuration list for PBXNativeTarget "HealthKitSample" */;
@@ -118,10 +227,12 @@
 				66789D902BE09DCF00C67FD3 /* Sources */,
 				66789D912BE09DCF00C67FD3 /* Frameworks */,
 				66789D922BE09DCF00C67FD3 /* Resources */,
+				66765B5D2BF40A2500EF882B /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				66765B582BF40A2500EF882B /* PBXTargetDependency */,
 			);
 			name = HealthKitSample;
 			productName = HealthKitSample;
@@ -138,6 +249,9 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					66765B4B2BF40A2400EF882B = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					66789D932BE09DCF00C67FD3 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -157,11 +271,21 @@
 			projectRoot = "";
 			targets = (
 				66789D932BE09DCF00C67FD3 /* HealthKitSample */,
+				66765B4B2BF40A2400EF882B /* HealthKitSampleWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		66765B4A2BF40A2400EF882B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66765B562BF40A2500EF882B /* Preview Assets.xcassets in Resources */,
+				66765B532BF40A2500EF882B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66789D922BE09DCF00C67FD3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,6 +298,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		66765B482BF40A2400EF882B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66765B642BF43ED200EF882B /* HealthKitSupport.swift in Sources */,
+				66765B602BF43E5E00EF882B /* HealthData.swift in Sources */,
+				66765B512BF40A2400EF882B /* ContentView.swift in Sources */,
+				66765B662BF43F1400EF882B /* HeartrateView.swift in Sources */,
+				66765B4F2BF40A2400EF882B /* HealthKitSampleWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66789D902BE09DCF00C67FD3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,6 +317,7 @@
 				66789DA92BEAD56B00C67FD3 /* HealthKitSupport.swift in Sources */,
 				66A322BB2BF0F4E10033991B /* StepData.swift in Sources */,
 				66789DA72BEAD4BA00C67FD3 /* HealthData.swift in Sources */,
+				66765B472BF3859F00EF882B /* WeeklyStepsView.swift in Sources */,
 				66789DAD2BEADA4B00C67FD3 /* StepCountReadView.swift in Sources */,
 				66789D9A2BE09DCF00C67FD3 /* ContentView.swift in Sources */,
 				66789DAB2BEADA3C00C67FD3 /* StepCountSaveView.swift in Sources */,
@@ -190,7 +327,81 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		66765B582BF40A2500EF882B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66765B4B2BF40A2400EF882B /* HealthKitSampleWatch Watch App */;
+			targetProxy = 66765B572BF40A2500EF882B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		66765B5B2BF40A2500EF882B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "HealthKitSampleWatch Watch App/HealthKitSampleWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HealthKitSampleWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = DJ7VR35KC8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HealthKitSampleWatch;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "アプリ上でヘルスデータの読み取りを行うため、権限を許可する必要があります。";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "アプリ上でヘルスデータの更新を行うため、権限を許可する必要があります。";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ryomuranaka.HealthKitSample;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ryomuranaka.HealthKitSample.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		66765B5C2BF40A2500EF882B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "HealthKitSampleWatch Watch App/HealthKitSampleWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HealthKitSampleWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = DJ7VR35KC8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HealthKitSampleWatch;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "アプリ上でヘルスデータの読み取りを行うため、権限を許可する必要があります。";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "アプリ上でヘルスデータの更新を行うため、権限を許可する必要があります。";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ryomuranaka.HealthKitSample;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ryomuranaka.HealthKitSample.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
 		66789DA02BE09DD100C67FD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -313,6 +524,7 @@
 		66789DA32BE09DD100C67FD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HealthKitSample/HealthKitSample.entitlements;
@@ -323,8 +535,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "アプリ上で歩数データを用いるため、権限を許可する必要があります。";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "アプリ上で歩数データの更新を行うため、権限を許可する必要があります。";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "アプリ上でヘルスデータの読み取りを行うため、権限を許可する必要があります。";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "アプリ上でヘルスデータの更新を行うため、権限を許可する必要があります。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -346,6 +558,7 @@
 		66789DA42BE09DD100C67FD3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HealthKitSample/HealthKitSample.entitlements;
@@ -356,8 +569,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "アプリ上で歩数データを用いるため、権限を許可する必要があります。";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "アプリ上で歩数データの更新を行うため、権限を許可する必要があります。";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "アプリ上でヘルスデータの読み取りを行うため、権限を許可する必要があります。";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "アプリ上でヘルスデータの更新を行うため、権限を許可する必要があります。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -379,6 +592,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		66765B5A2BF40A2500EF882B /* Build configuration list for PBXNativeTarget "HealthKitSampleWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66765B5B2BF40A2500EF882B /* Debug */,
+				66765B5C2BF40A2500EF882B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		66789D8F2BE09DCF00C67FD3 /* Build configuration list for PBXProject "HealthKitSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
