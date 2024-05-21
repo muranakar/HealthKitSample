@@ -20,8 +20,48 @@ struct ContentView: View {
                     Text("歩数を読み込む")
                 }
                 NavigationLink(destination:
-                    WeeklyStepsView()) {
+                                WeeklyStepsView()) {
                     Text("１週間の歩数を取得する")
+                }
+                NavigationLink(destination:
+                                HKSampleQueryDescriptorView()) {
+                    Text("HKSampleQueryDescriptor")
+                }
+                NavigationLink(destination:
+                                HKAnchoredObjectQueryDescriptorView()) {
+                    Text("HKAnchoredObjectQueryDescriptor")
+                }
+                NavigationLink(destination:
+                                HKStatisticsQueryDescriptorView()) {
+                    Text("HKStatisticsQueryDescriptor")
+                }
+                NavigationLink(destination:
+                                HKStatisticsCollectionQueryDescriptorView()) {
+                    Text("HKStatisticsCollectionQueryDescriptor")
+                }
+                NavigationLink(destination:
+                                HKCorrelationQueryView()) {
+                    Text("HKCorrelationQuery1")
+                }
+                NavigationLink(destination:
+                                CorrelationQueryView()) {
+                    Text("HKCorrelationQuery2")
+                }
+                NavigationLink(destination:
+                                HKSourceQueryDescriptorView()) {
+                    Text("HKSourceQueryDescriptor")
+                }
+                NavigationLink(destination:
+                                HKActivitySummaryQueryDescriptorView()) {
+                    Text("HKActivitySummaryQueryDescriptor")
+                }
+                NavigationLink(destination:
+                                HKDocumentQueryView()) {
+                    Text("HKDocumentQuery")
+                }
+                NavigationLink(destination:
+                                HKObserverQueryView()) {
+                    Text("HKObserverQuery")
                 }
             }
             .navigationBarTitle("サンプルコード")

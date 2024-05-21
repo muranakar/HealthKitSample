@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct HeartrateView: View {
     @State private var trigger = false
@@ -25,6 +26,8 @@ struct HeartrateView: View {
                             .foregroundColor(.blue)
             }
 
+        }.onAppear{
+            requestAuthorizationNotification()
         }
     }
     private func formattedDate(_ date: Date) -> String {
@@ -32,6 +35,31 @@ struct HeartrateView: View {
             formatter.dateStyle = .medium
             formatter.timeStyle = .medium
             return formatter.string(from: date)
+        }
+    func sendNotification() {
+            let content = UNMutableNotificationContent()
+            content.title = "High Heart Rate Alert"
+            content.body = "Your heart rate is above  bpm."
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            let request = UNNotificationRequest(identifier: "HighHeartRateNotification", content: content, trigger: trigger)
+
+            UNUserNotificationCenter.current().add(request) { (error) in
+                if let error = error {
+                    print("Error sending notification: \(error.localizedDescription)")
+                }
+            }
+        }
+    
+    private func requestAuthorizationNotification() {
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: .alert) { granted, error in
+                if granted {
+                    print("許可されました！")
+                }else{
+                    print("拒否されました...")
+                }
+            }
         }
 }
 

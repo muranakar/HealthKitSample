@@ -8,6 +8,7 @@
 import SwiftUI
 import HealthKit
 import HealthKitUI
+import UserNotifications
 
 class HealthData: ObservableObject {
     var healthStore = HKHealthStore()
@@ -54,6 +55,7 @@ class HealthData: ObservableObject {
     
     // アンカーを保持するプロパティ
     private var anchor: HKQueryAnchor?
+    private var count: Int = 0
     
     func startHeartRateQuery() {
         guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate) else {
@@ -69,10 +71,32 @@ class HealthData: ObservableObject {
         
         query.updateHandler = { (query, samples, deletedObjects, newAnchor, error) in
             self.process(samples: samples, unit: heartRateUnit)
+            self.count += 1
+            if self.count > 5 {
+                print("-------------")
+                self.sendNotification()
+            }
         }
         
         healthStore.execute(query)
     }
+    
+    
+    
+    func sendNotification() {
+            let content = UNMutableNotificationContent()
+            content.title = "High Heart Rate Alert"
+            content.body = "Your heart rate is above  bpm."
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            let request = UNNotificationRequest(identifier: "HighHeartRateNotification", content: content, trigger: trigger)
+
+            UNUserNotificationCenter.current().add(request) { (error) in
+                if let error = error {
+                    print("Error sending notification: \(error.localizedDescription)")
+                }
+            }
+        }
     
     private func process(samples: [HKSample]?, unit: HKUnit) {
         guard let heartRateSamples = samples as? [HKQuantitySample] else {
