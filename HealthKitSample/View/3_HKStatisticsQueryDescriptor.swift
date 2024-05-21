@@ -8,6 +8,7 @@
 // SwiftUIとHealthKitをインポート
 import SwiftUI
 import HealthKit
+import Charts
 
 // 日々の心拍数の統計情報を表す構造体
 struct DailyHeartRateStats: Identifiable {
@@ -25,24 +26,100 @@ struct HKStatisticsQueryDescriptorView: View {
     private let healthStore = HKHealthStore()  // HealthKitのストア
     
     var body: some View {
-        VStack {
-            Text("過去1週間の心拍数")  // タイトル
-            List(weeklyHeartRateStats) { stats in
-                VStack(alignment: .leading) {
-                    Text(stats.date)  // 日付
-                        .font(.headline)
-                    Text("平均: \(String(format: "%.1f", stats.average)) bpm")  // 平均心拍数
-                    Text("最小: \(Int(stats.min)) bpm")  // 最低心拍数
-                    Text("最大: \(Int(stats.max)) bpm")  // 最高心拍数
-                    Text("最新: \(Int(stats.mostRecent)) bpm")  // 最新の心拍数
+            TabView(selection: $currentPage) {
+                VStack {
+                    Chart {
+                        ForEach(weeklyHeartRateStats) { stats in
+                            LineMark(
+                                x: .value("日付", stats.date),
+                                y: .value("最高心拍数", stats.max)
+                            )
+                            .foregroundStyle(by: .value("max", "最高心拍数"))
+                            
+                            LineMark(
+                                x: .value("日付", stats.date),
+                                y: .value("最低心拍数", stats.min)
+                            )
+                            .foregroundStyle(by: .value("min", "最低心拍数"))
+                            
+                            LineMark(
+                                x: .value("日付", stats.date),
+                                y: .value("平均心拍数", stats.average)
+                            )
+                            .foregroundStyle(by: .value("average", "平均心拍数"))
+                            
+                            LineMark(
+                                x: .value("日付", stats.date),
+                                y: .value("最新心拍数", stats.mostRecent)
+                            )
+                            .foregroundStyle(by: .value("moostRecent", "最新心拍数"))
+                        }
+                    }
+                    .chartForegroundStyleScale([
+                        "最高心拍数": Color.red,
+                        "最低心拍数": Color.blue,
+                        "平均心拍数": Color.green,
+                        "最新心拍数": Color.orange
+                    ])
+                    .padding()
+                    
+                    Text("過去1週間の心拍数")  // タイトル
                 }
-                .padding(.vertical)
+                .tag(0)
+                .tabItem {
+                    Label("チャート", systemImage: "chart.line.uptrend.xyaxis")
+                }
+                
+                List(weeklyHeartRateStats) { stats in
+                    VStack(alignment: .leading) {
+                        Text(stats.date)  // 日付
+                            .font(.headline)
+                        Text("平均: \(String(format: "%.1f", stats.average)) bpm")  // 平均心拍数
+                        Text("最小: \(Int(stats.min)) bpm")  // 最低心拍数
+                        Text("最大: \(Int(stats.max)) bpm")  // 最高心拍数
+                        Text("最新: \(Int(stats.mostRecent)) bpm")  // 最新の心拍数
+                    }
+                    .padding(.vertical)
+                }
+                .tag(1)
+                .tabItem {
+                    Label("リスト", systemImage: "list.bullet")
+                }
+
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .interactive))
+        
+        HStack {
+                        Button(action: {
+                            moveToPreviousPage()
+                        }) {
+                            Text("前のページ")
+                        }
+                        
+                        Button(action: {
+                            moveToNextPage()
+                        }) {
+                            Text("次のページ")
+                        }
+        }.padding()
+            .onAppear {
+                requestAuthorization()  // 認可をリクエストする
             }
         }
-        .onAppear {
-            requestAuthorization()  // 認可をリクエストする
+    @State private var currentPage = 0
+        
+        private func moveToPreviousPage() {
+            if currentPage > 0 {
+                currentPage -= 1
+            }
         }
-    }
+        
+        private func moveToNextPage() {
+            if currentPage < 1 {
+                currentPage += 1
+            }
+        }
     
     // 認可をリクエストする関数
     private func requestAuthorization() {
