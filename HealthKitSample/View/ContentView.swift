@@ -63,6 +63,23 @@ struct ContentView: View {
                                 HKObserverQueryView()) {
                     Text("HKObserverQuery")
                 }
+                NavigationLink(destination:
+                                RunningHealthKitView()) {
+                    Text("RunningHealthKitView")
+                }
+                NavigationLink(destination:
+                                WalkingOneMonthView()) {
+                    Text("WalkingOneMonthView")
+                }
+                NavigationLink(destination:
+                                HKStatisticsCollectionQueryDescriptorStepView()) {
+                    Text("HKStatisticsCollectionQueryDescriptorStepView")
+                }
+                NavigationLink(destination:
+                                HealthKitSwiftConcurrencyView()
+                ) {
+                    Text("HealthKitSwiftConcurrencyView")
+                }
             }
             .navigationBarTitle("サンプルコード")
         }

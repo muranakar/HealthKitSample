@@ -110,6 +110,7 @@ struct HKAnchoredObjectQueryDescriptorView: View {
                 for try await update in updateQueue {
                     stepData.append(contentsOf: update.addedSamples)
                 }
+                print("更新")
             } catch {
                 // エラーハンドリング
                 print("データ変更の監視エラー: \(error)")

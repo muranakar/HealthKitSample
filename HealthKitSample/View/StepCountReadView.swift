@@ -8,9 +8,17 @@
 import SwiftUI
 import HealthKit
 import HealthKitUI
+import Foundation
+
+
 
 
 struct StepCountReadView: View {
+    struct StepData {
+        var stepCount: Int
+        var startDate: Date
+        var endDate: Date
+    }
     @StateObject var healthData = HealthData()
     @State var isSuccessRequest: Bool? = nil
     

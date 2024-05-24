@@ -7,9 +7,17 @@
 
 import SwiftUI
 import HealthKit
+import Foundation
 
 
 struct StepCountSaveView: View {
+    
+    struct StepData {
+        var stepCount: Int
+        var startDate: Date
+        var endDate: Date
+    }
+    
     @StateObject var healthData = HealthData()
     @State private var authenticated: Bool? = nil
     @State private var trigger = false

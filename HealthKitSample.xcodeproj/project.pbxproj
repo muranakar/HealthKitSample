@@ -14,6 +14,9 @@
 		663E15ED2BF56643008EABE2 /* 1_HKSampleQueryDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663E15EC2BF56643008EABE2 /* 1_HKSampleQueryDescriptor.swift */; };
 		663E15EF2BF5666A008EABE2 /* 2_HKAnchoredObjectQueryDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663E15EE2BF5666A008EABE2 /* 2_HKAnchoredObjectQueryDescriptor.swift */; };
 		663E15F12BF56682008EABE2 /* 3_HKStatisticsQueryDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663E15F02BF56682008EABE2 /* 3_HKStatisticsQueryDescriptor.swift */; };
+		6655E4D82BFFF2000025F1B2 /* 12_HKStatisticsCollectionQueryDescriptorStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655E4D72BFFF2000025F1B2 /* 12_HKStatisticsCollectionQueryDescriptorStepView.swift */; };
+		6655E4DA2C003DF70025F1B2 /* 13_HealthKitSwiftConcurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6655E4D92C003DF70025F1B2 /* 13_HealthKitSwiftConcurrencyView.swift */; };
+		666A785A2BFE9D17008C0693 /* 11_ WalkingOneMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666A78592BFE9D17008C0693 /* 11_ WalkingOneMonthView.swift */; };
 		66765B472BF3859F00EF882B /* WeeklyStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66765B462BF3859F00EF882B /* WeeklyStepsView.swift */; };
 		66765B4F2BF40A2400EF882B /* HealthKitSampleWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66765B4E2BF40A2400EF882B /* HealthKitSampleWatchApp.swift */; };
 		66765B512BF40A2400EF882B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66765B502BF40A2400EF882B /* ContentView.swift */; };
@@ -35,6 +38,7 @@
 		667D6C422BF8D549004E37A9 /* 9_HKObserverQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667D6C412BF8D549004E37A9 /* 9_HKObserverQuery.swift */; };
 		6680A82D2BFB792A00C68F4F /* 5_1_HKCorrelationQueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6680A82C2BFB792A00C68F4F /* 5_1_HKCorrelationQueryView.swift */; };
 		66A322BB2BF0F4E10033991B /* StepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A322BA2BF0F4E10033991B /* StepData.swift */; };
+		66C3C67C2BFD9A7A00A04F99 /* 10_RunningHealthKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3C67B2BFD9A7A00A04F99 /* 10_RunningHealthKitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,9 @@
 		663E15EC2BF56643008EABE2 /* 1_HKSampleQueryDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1_HKSampleQueryDescriptor.swift; sourceTree = "<group>"; };
 		663E15EE2BF5666A008EABE2 /* 2_HKAnchoredObjectQueryDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2_HKAnchoredObjectQueryDescriptor.swift; sourceTree = "<group>"; };
 		663E15F02BF56682008EABE2 /* 3_HKStatisticsQueryDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3_HKStatisticsQueryDescriptor.swift; sourceTree = "<group>"; };
+		6655E4D72BFFF2000025F1B2 /* 12_HKStatisticsCollectionQueryDescriptorStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 12_HKStatisticsCollectionQueryDescriptorStepView.swift; sourceTree = "<group>"; };
+		6655E4D92C003DF70025F1B2 /* 13_HealthKitSwiftConcurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 13_HealthKitSwiftConcurrencyView.swift; sourceTree = "<group>"; };
+		666A78592BFE9D17008C0693 /* 11_ WalkingOneMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "11_ WalkingOneMonthView.swift"; sourceTree = "<group>"; };
 		66765B462BF3859F00EF882B /* WeeklyStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStepsView.swift; sourceTree = "<group>"; };
 		66765B4C2BF40A2400EF882B /* HealthKitSampleWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HealthKitSampleWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66765B4E2BF40A2400EF882B /* HealthKitSampleWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSampleWatchApp.swift; sourceTree = "<group>"; };
@@ -93,6 +100,7 @@
 		667D6C412BF8D549004E37A9 /* 9_HKObserverQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 9_HKObserverQuery.swift; sourceTree = "<group>"; };
 		6680A82C2BFB792A00C68F4F /* 5_1_HKCorrelationQueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 5_1_HKCorrelationQueryView.swift; sourceTree = "<group>"; };
 		66A322BA2BF0F4E10033991B /* StepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepData.swift; sourceTree = "<group>"; };
+		66C3C67B2BFD9A7A00A04F99 /* 10_RunningHealthKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10_RunningHealthKitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +226,10 @@
 				661C08952BF6F6A800A881FF /* 7_HKActivitySummaryQueryDescriptor.swift */,
 				667D6C3F2BF8D542004E37A9 /* 8_HKDocumentQuery.swift */,
 				667D6C412BF8D549004E37A9 /* 9_HKObserverQuery.swift */,
+				66C3C67B2BFD9A7A00A04F99 /* 10_RunningHealthKitView.swift */,
+				666A78592BFE9D17008C0693 /* 11_ WalkingOneMonthView.swift */,
+				6655E4D72BFFF2000025F1B2 /* 12_HKStatisticsCollectionQueryDescriptorStepView.swift */,
+				6655E4D92C003DF70025F1B2 /* 13_HealthKitSwiftConcurrencyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +365,8 @@
 				667D6C422BF8D549004E37A9 /* 9_HKObserverQuery.swift in Sources */,
 				661C08902BF6B4DC00A881FF /* 4_HKStatisticsCollectionQueryDescriptor.swift in Sources */,
 				66765B472BF3859F00EF882B /* WeeklyStepsView.swift in Sources */,
+				6655E4DA2C003DF70025F1B2 /* 13_HealthKitSwiftConcurrencyView.swift in Sources */,
+				666A785A2BFE9D17008C0693 /* 11_ WalkingOneMonthView.swift in Sources */,
 				661C08962BF6F6A800A881FF /* 7_HKActivitySummaryQueryDescriptor.swift in Sources */,
 				661C08942BF6F69F00A881FF /* 6_HKSourceQueryDescriptorView.swift in Sources */,
 				667D6C402BF8D542004E37A9 /* 8_HKDocumentQuery.swift in Sources */,
@@ -360,6 +374,8 @@
 				66789DAD2BEADA4B00C67FD3 /* StepCountReadView.swift in Sources */,
 				66789D9A2BE09DCF00C67FD3 /* ContentView.swift in Sources */,
 				66789DAB2BEADA3C00C67FD3 /* StepCountSaveView.swift in Sources */,
+				66C3C67C2BFD9A7A00A04F99 /* 10_RunningHealthKitView.swift in Sources */,
+				6655E4D82BFFF2000025F1B2 /* 12_HKStatisticsCollectionQueryDescriptorStepView.swift in Sources */,
 				6680A82D2BFB792A00C68F4F /* 5_1_HKCorrelationQueryView.swift in Sources */,
 				66789D982BE09DCF00C67FD3 /* HealthKitSampleApp.swift in Sources */,
 			);
