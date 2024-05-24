@@ -65,7 +65,7 @@ class HighCalorieFoodsViewModel: ObservableObject {
     
     // 高カロリー食品を取得する関数
     func fetchHighCalorieFoods() {
-        // 高カロリー食品を取得するための述語を設定
+        // 高カロリー食品を取得するための条件を設定
         let highCalorie = HKQuantity(unit: .kilocalorie(), doubleValue: 800.0)
         let greaterThanHighCalorie = HKQuery.predicateForQuantitySamples(with: .greaterThanOrEqualTo, quantity: highCalorie)
         let energyConsumed = HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)!

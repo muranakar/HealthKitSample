@@ -130,7 +130,7 @@ struct HealthKitSwiftConcurrencyView: View {
         components.day = components.day! - 7
         let oneWeekAgo = calendar.date(from: components)
         
-        // 過去一週間以内のすべての歩数サンプルに対する述語を作成
+        // 過去一週間以内のすべての歩数サンプルに対する条件を作成
         let inLastWeek = HKQuery.predicateForSamples(withStart: oneWeekAgo,
                                                      end: nil,
                                                      options: [.strictStartDate])
@@ -170,7 +170,7 @@ struct HealthKitSwiftConcurrencyView: View {
         components.day = components.day! - 7
         let oneWeekAgo = calendar.date(from: components)
         
-        // 過去一週間以内のすべての歩数サンプルに対する述語を作成
+        // 過去一週間以内のすべての歩数サンプルに対する条件を作成
         let inLastWeek = HKQuery.predicateForSamples(withStart: oneWeekAgo,
                                                      end: nil,
                                                      options: [.strictStartDate])
