@@ -74,6 +74,16 @@ fileprivate class HealthStoreManager: ObservableObject {
                  // 上記の定数をUIに反映
                 }
                 
+                if let statistics = stepCounts.statistics(for: Date()) {
+                    if let quantity = statistics.sumQuantity() {
+                        let steps = Int(quantity.doubleValue(for: HKUnit.count()))
+                        let stepEntry = StepData(date: statistics.startDate, steps: steps)
+                    }
+                }
+                await MainActor.run {
+                 // 上記の定数をUIに反映
+                }
+                
                 stepCounts.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
                     if let quantity = statistics.sumQuantity() {
                         let steps = Int(quantity.doubleValue(for: HKUnit.count()))
