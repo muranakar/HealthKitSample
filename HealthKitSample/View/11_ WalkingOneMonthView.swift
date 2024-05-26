@@ -19,6 +19,7 @@ fileprivate struct StepData: Identifiable,Sendable {
 fileprivate class HealthStoreManager: ObservableObject {
     private let healthStore = HKHealthStore()
     @Published var stepData: [StepData] = []
+    @State private var myUpdateTask: Task<Void, Never>? = nil
 
     init() {
         requestAuthorization()
@@ -41,28 +42,38 @@ fileprivate class HealthStoreManager: ObservableObject {
 
     func fetchStepsData() {
         let calendar = Calendar(identifier: .gregorian)
-        let today = calendar.startOfDay(for: Date())
-        guard let endDate = calendar.date(byAdding: .day, value: 1, to: today),
-              let startDate = calendar.date(byAdding: .day, value: -30, to: endDate) else {
+        let todayAM0 = calendar.startOfDay(for: Date())
+        guard let endDate = calendar.date(byAdding: .day, value: 1, to: todayAM0),
+              let startDate = calendar.date(byAdding: .month, value: -1, to: endDate) else {
             fatalError("*** 開始日または終了日を計算できません ***")
         }
 
-        let thisMonth = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
+        let thisMonthPredicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
         let stepType = HKQuantityType(.stepCount)
-        let stepsThisMonth = HKSamplePredicate.quantitySample(type: stepType, predicate: thisMonth)
-        let everyDay = DateComponents(day: 1)
-
+        let stepsThisMonthSamplePredicate = HKSamplePredicate.quantitySample(type: stepType, predicate: thisMonthPredicate)
+        let everyWeek = DateComponents(day: 7)
+      
         let sumOfStepsQuery = HKStatisticsCollectionQueryDescriptor(
-            predicate: stepsThisMonth,
+            predicate: stepsThisMonthSamplePredicate,
             options: .cumulativeSum,
             anchorDate: endDate,
-            intervalComponents: everyDay)
+            intervalComponents: everyWeek)
 
         Task {
             do {
                 let stepCounts = try await sumOfStepsQuery.result(for: healthStore)
                 var stepData: [StepData] = []
 
+                stepCounts.statistics().forEach { statistics in
+                    if let quantity = statistics.sumQuantity() {
+                        let steps = Int(quantity.doubleValue(for: HKUnit.count()))
+                        let stepEntry = StepData(date: statistics.startDate, steps: steps)
+                    }
+                }
+                await MainActor.run {
+                 // 上記の定数をUIに反映
+                }
+                
                 stepCounts.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
                     if let quantity = statistics.sumQuantity() {
                         let steps = Int(quantity.doubleValue(for: HKUnit.count()))
