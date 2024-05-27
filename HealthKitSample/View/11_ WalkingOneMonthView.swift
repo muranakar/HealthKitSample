@@ -47,7 +47,6 @@ fileprivate class HealthStoreManager: ObservableObject {
               let startDate = calendar.date(byAdding: .month, value: -1, to: endDate) else {
             fatalError("*** 開始日または終了日を計算できません ***")
         }
-
         let thisMonthPredicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
         let stepType = HKQuantityType(.stepCount)
         let stepsThisMonthSamplePredicate = HKSamplePredicate.quantitySample(type: stepType, predicate: thisMonthPredicate)
@@ -58,6 +57,7 @@ fileprivate class HealthStoreManager: ObservableObject {
             options: .cumulativeSum,
             anchorDate: endDate,
             intervalComponents: everyWeek)
+        
 
         Task {
             do {
