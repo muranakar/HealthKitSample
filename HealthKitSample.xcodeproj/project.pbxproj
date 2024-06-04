@@ -39,6 +39,7 @@
 		6680A82D2BFB792A00C68F4F /* 5_1_HKCorrelationQueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6680A82C2BFB792A00C68F4F /* 5_1_HKCorrelationQueryView.swift */; };
 		66A322BB2BF0F4E10033991B /* StepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A322BA2BF0F4E10033991B /* StepData.swift */; };
 		66C3C67C2BFD9A7A00A04F99 /* 10_RunningHealthKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3C67B2BFD9A7A00A04F99 /* 10_RunningHealthKitView.swift */; };
+		66CD9A292C0E6B1F00AD7CB5 /* 3_WorkoutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CD9A282C0E6B1F00AD7CB5 /* 3_WorkoutSessionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		6680A82C2BFB792A00C68F4F /* 5_1_HKCorrelationQueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 5_1_HKCorrelationQueryView.swift; sourceTree = "<group>"; };
 		66A322BA2BF0F4E10033991B /* StepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepData.swift; sourceTree = "<group>"; };
 		66C3C67B2BFD9A7A00A04F99 /* 10_RunningHealthKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10_RunningHealthKitView.swift; sourceTree = "<group>"; };
+		66CD9A282C0E6B1F00AD7CB5 /* 3_WorkoutSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3_WorkoutSessionView.swift; sourceTree = "<group>"; };
+		66CD9A2A2C0E73A800AD7CB5 /* HealthKitSampleWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "HealthKitSampleWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 		66765B4D2BF40A2400EF882B /* HealthKitSampleWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				66CD9A2A2C0E73A800AD7CB5 /* HealthKitSampleWatch-Watch-App-Info.plist */,
 				66765B5E2BF40F7300EF882B /* HealthKitSampleWatch Watch App.entitlements */,
 				66765B4E2BF40A2400EF882B /* HealthKitSampleWatchApp.swift */,
 				66765B612BF43E9F00EF882B /* View */,
@@ -147,6 +151,7 @@
 			children = (
 				66765B502BF40A2400EF882B /* ContentView.swift */,
 				66765B652BF43F1400EF882B /* HeartrateView.swift */,
+				66CD9A282C0E6B1F00AD7CB5 /* 3_WorkoutSessionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				66765B642BF43ED200EF882B /* HealthKitSupport.swift in Sources */,
 				66765B602BF43E5E00EF882B /* HealthData.swift in Sources */,
 				66765B512BF40A2400EF882B /* ContentView.swift in Sources */,
+				66CD9A292C0E6B1F00AD7CB5 /* 3_WorkoutSessionView.swift in Sources */,
 				66765B662BF43F1400EF882B /* HeartrateView.swift in Sources */,
 				66765B4F2BF40A2400EF882B /* HealthKitSampleWatchApp.swift in Sources */,
 			);
@@ -404,6 +410,7 @@
 				DEVELOPMENT_TEAM = DJ7VR35KC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HealthKitSampleWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HealthKitSampleWatch;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "アプリ上でヘルスデータの読み取りを行うため、権限を許可する必要があります。";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "アプリ上でヘルスデータの更新を行うため、権限を許可する必要があります。";
@@ -437,6 +444,7 @@
 				DEVELOPMENT_TEAM = DJ7VR35KC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HealthKitSampleWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HealthKitSampleWatch;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "アプリ上でヘルスデータの読み取りを行うため、権限を許可する必要があります。";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "アプリ上でヘルスデータの更新を行うため、権限を許可する必要があります。";
